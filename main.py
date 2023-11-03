@@ -74,7 +74,13 @@ grafico_duracao = px.scatter(dados, x='release_date', y='duration', color='nome_
                      'name':'Nome do episódio',
                      'quem_esta':'Participantes'
                  })
-
+grafico_duracao.update_layout(legend=dict(
+    orientation="h",
+    yanchor="bottom",
+    y=1.02,
+    xanchor="right",
+    x=1
+))
 
 with col1:
     st.plotly_chart(grafico_duracao, theme="streamlit", use_container_width=True)
