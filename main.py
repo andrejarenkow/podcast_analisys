@@ -66,6 +66,7 @@ col3.metric("Tempo total em horas", tempo_total/60)
 #Gráficos
 col1, col2, = st.columns([1.5,1])
 grafico_duracao = px.scatter(dados, x='release_date', y='duration', color='nome_podcast', hover_data=['name','quem_esta'],
+                             color_discrete_sequence=['#FFCB00','purple'],
                              labels={
                      "release_date": "Data",
                      "duration": "Duração (minutos)",
