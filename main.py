@@ -43,7 +43,7 @@ dados = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G
 dados = dados[['url_imagem','name','release_date', 'description','quem_esta','duration','link_spotify', 'nome_podcast', ]]
 dados['duration'] = dados['duration'].astype(float)
 dados['quem_esta'] = dados['quem_esta'].str.replace(', ',',')
-dados = dados.set_index('release_date')
+
 
 
 #Participações
@@ -98,7 +98,7 @@ with col2:
 
 #Tabela
 st.markdown('##### Lista de Episódios')
-st.dataframe(dados, 
+st.dataframe(dados.set_index('release_date'), 
                 column_config={
                     'url_imagem': st.column_config.ImageColumn('Capa', help='Capa do episódio', width ='small'),
                     'release_date': st.column_config.DateColumn('Data', format="DD.MM.YYYY", help='Data de lançamento do episódio'),
