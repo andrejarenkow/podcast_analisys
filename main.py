@@ -43,7 +43,7 @@ dados = pd.read_table('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G
 dados = dados[['url_imagem','name','release_date', 'description','quem_esta','duration','link_spotify', 'nome_podcast', ]]
 dados['duration'] = dados['duration'].astype(float)
 dados['quem_esta'] = dados['quem_esta'].str.replace(', ',',')
-dados = dados.set_index('release_date)
+dados = dados.set_index('release_date')
 
 
 #Participações
