@@ -59,7 +59,7 @@ tempo_total = dados['duration'].sum().round(1)
 col1, col2, col3 = st.columns(3)
 col1.metric("Total episódios", len(dados))
 col2.metric("Tempo total em minutos", tempo_total)
-col3.metric("Tempo médio em minutos", dados['duration'].mean().round(1))s
+col3.metric("Tempo médio em minutos", dados['duration'].mean().round(1))
 
 
 
