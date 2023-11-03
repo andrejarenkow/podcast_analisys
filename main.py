@@ -90,8 +90,8 @@ with col2:
     st.markdown('##### Ranking de participações')
     st.dataframe(top_participacoes,
                  column_config={
-                    'Porcentagem': st.column_config.ProgressColumn('Total', help='Porcentagem de participação do total de episódios', min_value=0, max_value=1),
-                    'Linha': st.column_config.BarChartColumn('Linha do tempo', )
+                    'Porcentagem': st.column_config.ProgressColumn('Total', help='Porcentagem de participação do total de episódios', min_value=0, max_value=1, width ='small'),
+                    'Linha': st.column_config.BarChartColumn('Linha do tempo', width ='small' )
                     })
 
 
