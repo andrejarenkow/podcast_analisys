@@ -62,7 +62,25 @@ col1.metric("Total episódios", len(dados))
 col2.metric("Tempo total em minutos", tempo_total)
 col3.metric("Tempo médio em minutos", dados['duration'].mean().round(1))
 
+#Bolao The Game Awards
+st.divider()
+st.subheader('Bolão The Game Awards 2023!')
+imagens_jogos = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=255129162&single=true&output=csv')
+imagens_jogos = imagens_jogos.set_index('Jogo')
+imagens_jogos = imagens_jogos.to_dict()['Imagem']
 
+dados_game_awards = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=1743518019&single=true&output=csv')
+dados_game_awards = dados_game_awards.replace(imagens_jogos)
+
+st.dataframe(dados_game_awards, hide_index=True, use_container_width = True,
+             column_config={
+                 'Dan': st.column_config.ImageColumn(),
+                 'Cardoso': st.column_config.ImageColumn(),
+                 'Márcia': st.column_config.ImageColumn(),
+                 'Marcellus': st.column_config.ImageColumn()
+             }
+            )
+st.divider()
 
 #Gráficos
 col1, col2, = st.columns([1.5,1])
@@ -95,24 +113,7 @@ with col2:
                     'Linha': st.column_config.BarChartColumn('Linha do tempo')
                     })
 
-#Bolao The Game Awards
-st.divider()
-st.subheader('Bolão The Game Awards 2023!')
-imagens_jogos = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=255129162&single=true&output=csv')
-imagens_jogos = imagens_jogos.set_index('Jogo')
-imagens_jogos = imagens_jogos.to_dict()['Imagem']
 
-dados_game_awards = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=1743518019&single=true&output=csv')
-dados_game_awards = dados_game_awards.replace(imagens_jogos)
-
-st.dataframe(dados_game_awards, hide_index=True, use_container_width = True,
-             column_config={
-                 'Dan': st.column_config.ImageColumn(),
-                 'Cardoso': st.column_config.ImageColumn(),
-                 'Márcia': st.column_config.ImageColumn(),
-                 'Marcellus': st.column_config.ImageColumn()
-             }
-            )
 
 #Tabela
 st.divider()
