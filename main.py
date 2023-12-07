@@ -95,22 +95,7 @@ with col2:
                     'Linha': st.column_config.BarChartColumn('Linha do tempo')
                     })
 
-
-
-#Tabela
-st.markdown('##### Lista de Episódios')
-st.dataframe(dados.set_index('release_date'), 
-                column_config={
-                    'url_imagem': st.column_config.ImageColumn('Capa', help='Capa do episódio', width ='small'),
-                    'release_date': st.column_config.DateColumn('Data', format="DD.MM.YYYY", help='Data de lançamento do episódio'),
-                    'duration': st.column_config.NumberColumn("Duração (minutos)", format="%d", ),
-                    'link_spotify': st.column_config.LinkColumn("Link"),
-                    'description': st.column_config.Column("Descrição"),
-                    'quem_esta': st.column_config.Column("Participantes"),
-                    'name': st.column_config.Column("Nome do episódio")
-                    
-
-                })
+#Bolao The Game Awards
 st.divider()
 st.subheader('Bolão The Game Awards 2023!')
 imagens_jogos = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=255129162&single=true&output=csv')
@@ -128,6 +113,23 @@ st.dataframe(dados_game_awards, hide_index=True,
                  'Marcellus': st.column_config.ImageColumn()
              }
             )
+
+#Tabela
+st.divider()
+st.subheader('Lista de Episódios')
+st.dataframe(dados.set_index('release_date'), 
+                column_config={
+                    'url_imagem': st.column_config.ImageColumn('Capa', help='Capa do episódio', width ='small'),
+                    'release_date': st.column_config.DateColumn('Data', format="DD.MM.YYYY", help='Data de lançamento do episódio'),
+                    'duration': st.column_config.NumberColumn("Duração (minutos)", format="%d", ),
+                    'link_spotify': st.column_config.LinkColumn("Link"),
+                    'description': st.column_config.Column("Descrição"),
+                    'quem_esta': st.column_config.Column("Participantes"),
+                    'name': st.column_config.Column("Nome do episódio")
+                    
+
+                })
+
 
 
 
