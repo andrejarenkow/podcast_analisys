@@ -105,7 +105,7 @@ imagens_jogos = imagens_jogos.to_dict()['Imagem']
 dados_game_awards = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=1743518019&single=true&output=csv')
 dados_game_awards = dados_game_awards.replace(imagens_jogos)
 
-st.dataframe(dados_game_awards, hide_index=True,
+st.dataframe(dados_game_awards, hide_index=True, use_container_width = True,
              column_config={
                  'Dan': st.column_config.ImageColumn(),
                  'Cardoso': st.column_config.ImageColumn(),
