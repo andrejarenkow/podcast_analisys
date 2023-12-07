@@ -115,12 +115,12 @@ st.divider()
 st.subheader('Bolão The Game Awards 2023!')
 imagens_jogos = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=255129162&single=true&output=csv')
 imagens_jogos = imagens_jogos.set_index('Jogo')
-imagens_jogos = imagens_jogos.to_dict()
+imagens_jogos = imagens_jogos.to_dict()['Imagem']
 
 dados_game_awards = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTviyi86G1qxhCZacjpN1v8ShugrnPn2Y-WwzcVjpEhNsZCWNcVQAMAOLXwYnj8g_1_IsPx7YMxKr2O/pub?gid=1743518019&single=true&output=csv')
-#dados_game_awards = dados_game_awards['ID_OCUPA_N'].replace(imagens_jogos)
+dados_game_awards = dados_game_awards['ID_OCUPA_N'].replace(imagens_jogos)
 
-#st.dataframe(dados_game_awards, hide_index=True)
-imagens_jogos
+st.dataframe(dados_game_awards, hide_index=True)
+
 
 
