@@ -77,7 +77,8 @@ st.dataframe(dados_game_awards, hide_index=True, use_container_width = True,
                  'Dan': st.column_config.ImageColumn(),
                  'Cardoso': st.column_config.ImageColumn(),
                  'Márcia': st.column_config.ImageColumn(),
-                 'Marcellus': st.column_config.ImageColumn()
+                 'Marcellus': st.column_config.ImageColumn(),
+                 'Vencedor': st.column_config.ImageColumn()
              }
             )
 st.divider()
