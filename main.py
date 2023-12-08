@@ -83,6 +83,18 @@ st.dataframe(dados_game_awards, hide_index=True, use_container_width = True,
             )
 st.divider()
 
+resultado = []
+
+for i in ['Dan',	'Cardoso',	'Márcia',	'Marcellus'	]:
+
+ resultado.append((i,(dados_game_awards[i]==dados_game_awards['Vencedor']).sum()))
+
+resultado = pd.DataFrame(resultado, columns = ['Participante', 'Acertos']).sort_values('Acertos', ascending=False)
+st.dataframe(resultado, hide_index=True, use_container_width = True,
+             column_config={
+                 'Acertos': st.column_config.ProgressColumn(min_value=0, max_value=23, format="%f"),})
+
+
 #Gráficos
 col1, col2, = st.columns([1.5,1])
 grafico_duracao = px.scatter(dados, x='release_date', y='duration', color='nome_podcast', hover_data=['name','quem_esta'],
