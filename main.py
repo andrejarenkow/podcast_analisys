@@ -74,11 +74,11 @@ dados_game_awards = dados_game_awards.replace(imagens_jogos)
 
 st.dataframe(dados_game_awards, hide_index=True, use_container_width = True,
              column_config={
-                 'Dan': st.column_config.ImageColumn(),
-                 'Cardoso': st.column_config.ImageColumn(),
-                 'Márcia': st.column_config.ImageColumn(),
-                 'Marcellus': st.column_config.ImageColumn(),
-                 'Vencedor': st.column_config.ImageColumn()
+                 'Dan': st.column_config.ImageColumn(width='small'),
+                 'Cardoso': st.column_config.ImageColumn(width='small'),
+                 'Márcia': st.column_config.ImageColumn(width='small'),
+                 'Marcellus': st.column_config.ImageColumn(width='small'),
+                 'Vencedor': st.column_config.ImageColumn(width='small')
              }
             )
 st.divider()
